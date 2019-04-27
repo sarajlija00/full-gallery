@@ -1,3 +1,7 @@
+import {hidenData} from './user.mjs';
+
+
+
 const loginDiv = document.getElementById('login-form');
 const resultDiv = document.getElementById('result');
 const errorDiv = document.getElementById('error');
@@ -39,6 +43,7 @@ const login = () => {
 
 //funkcija za odlogovanje, sakrivanje menia i ponovno prikazivanje login formee
 const logOut = () => {
+    hidenData()
     localStorage.removeItem ('token');
     loginDiv.style = 'display: block';
     menuDiv.style = 'display: none';

@@ -6,7 +6,7 @@ body {
 }
 
 input {
-    width: 200px;
+    width: 198px;
     border-radius: 5px;
     border-style: solid;
     border-color: black;
@@ -16,23 +16,22 @@ input {
 .menu-class {
     border:  2px solid black;
     border-radius: 5px;
-    
     background-color: rgb(238, 232, 232);
     padding: 7px;
-    margin-right: 81%;
+    margin-right: 78%;
 }
 
 .center {
     margin-left: 40%;
     margin-top:  10%;
-  }
+}
 
 .pointer-cursor {
     cursor: pointer;
 }
 
 .login {
-    width: 29%;
+    width: 34%;
 }
 
 .text {
@@ -43,4 +42,9 @@ input {
 .error {
     margin-left: 42%;
     color: red;
+}
+.result {
+    font-size: 20px;
+    margin-right: 60%;
+    padding: 15px;
 }

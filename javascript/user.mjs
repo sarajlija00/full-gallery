@@ -10,7 +10,6 @@ const user = () => new Promise ((resolve, reject) => {
     xhttp.onreadystatechange = function () {
         if(xhttp.readyState == 4 && xhttp.status == 200){
             let response = JSON.parse(xhttp.responseText);
-            console.log(response);
             resolve(response);
         }
         if(xhttp.readyState == 4 && xhttp.status !== 200){
@@ -25,21 +24,31 @@ const user = () => new Promise ((resolve, reject) => {
 
  const getUser = () => {
      user()
-     .then(showData(result) )
+     .then(showData)
      .catch(error)
  }
 
+ 
+
 const showData = (result) => {
     userResult.innerHTML = `
-    ID: ${result.id} <br>
-    First name: ${result.first_name} <br>
-    Last name: ${result.last_name} <br>
-    Email: ${result.email} <br>
+    <div class = "menu-class result">
+        ID: ${result.id} <br>
+        First name: ${result.first_name} <br>
+        Last name: ${result.last_name} <br>
+        Email: ${result.email} <br>
+    </div>
     `;
+}
+
+const hidenData = () => { 
+    userResult.style = 'display: none';
 }
 
 const error = err => errorDiv.innerHTML = err;
 
+
 export {
-    getUser
+    getUser,
+    hidenData
 }
