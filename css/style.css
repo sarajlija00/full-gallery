@@ -1,0 +1,46 @@
+body {
+    height: 100vh;
+    background-image: url("../images/pics.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+input {
+    width: 200px;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: black;
+    padding: 7px;
+}
+
+.menu-class {
+    border:  2px solid black;
+    border-radius: 5px;
+    
+    background-color: rgb(238, 232, 232);
+    padding: 7px;
+    margin-right: 81%;
+}
+
+.center {
+    margin-left: 40%;
+    margin-top:  10%;
+  }
+
+.pointer-cursor {
+    cursor: pointer;
+}
+
+.login {
+    width: 29%;
+}
+
+.text {
+    margin-top: 15px;
+    margin-left: 43%;
+    color: blue;
+}
+.error {
+    margin-left: 42%;
+    color: red;
+}
