@@ -1,7 +1,7 @@
 const userDiv = document.getElementById('user');
 const userResult = document.getElementById('result')
 const errorDiv = document.getElementById('error');
-const token = localStorage.getItem('token');
+
 
 
 const user = () => new Promise ((resolve, reject) => {
@@ -10,20 +10,19 @@ const user = () => new Promise ((resolve, reject) => {
     xhhtp.onreadystatechange = function () {
         if(xhttp.readyState == 4 && xhttp.status == 200){
             let response = JSON.parse(xhttp.responseText);
-            token.JSON.parse(xhttp.responseText);
             resolve(response);
         }
-        if(xhhtp.readyState == 4 && xhttp.status !== 200){
+        if(xhttp.readyState == 4 && xhttp.status !== 200){
             reject('nesto ne valja');
         }
     }
     xhttp.open('GET', url, true);
-    xhttp.setRequestHeader('Authorization', token.token);
+    const token = localStorage.getItem('token');
+    xhttp.setRequestHeader('Authorization', token);
     xhttp.send();
  })
 
  const getUser = () => {
-     const token = localStorage.getItem('token');
      user()
      .then(showData)
      .catch(error)
