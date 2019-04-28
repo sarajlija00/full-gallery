@@ -1,4 +1,5 @@
 import {hidenData} from './user.mjs';
+import {hidenInput} from './weather.mjs';
 
 
 
@@ -7,6 +8,8 @@ const resultDiv = document.getElementById('result');
 const errorDiv = document.getElementById('error');
 const menuDiv = document.getElementById('menu');
 const forgotPasswordDiv = document.getElementById('pass');
+const weather = document.getElementById('weather');
+weather.style = 'display: none';
 menuDiv.style = 'display: none';
 
 //funkcija koja salje reguest i vraca response
@@ -44,11 +47,13 @@ const login = () => {
 //funkcija za odlogovanje, sakrivanje menia i ponovno prikazivanje login formee
 const logOut = () => {
     hidenData()
+    hidenInput()
     localStorage.removeItem ('token');
     loginDiv.style = 'display: block';
     menuDiv.style = 'display: none';
     errorDiv.style = 'display: block';
     forgotPasswordDiv.style = 'display: block';
+
 }
 
 //funkcija koja cuva token, sakriva login formu i pokazuje mani
