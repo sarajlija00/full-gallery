@@ -47,6 +47,7 @@ const logOut = () => {
     localStorage.removeItem ('token');
     loginDiv.style = 'display: block';
     menuDiv.style = 'display: none';
+    errorDiv.style = 'display: block';
     forgotPasswordDiv.style = 'display: block';
 }
 

@@ -7,7 +7,6 @@ const galleryRequest = () => new Promise ((resolve, reject) => {
     xhttp.onreadystatechange = function () {
         if(xhttp.readyState == 4 && xhttp.status ==200){
             let response = JSON.parse(xhttp.responseText);
-            console.log (response);
             resolve (response);
         }
         if (xhttp.readyState == 4 && xhttp.status !==200) {
@@ -29,12 +28,16 @@ const getGallery = () => {
 const showPictures = (result) => {
     let base = result.base_url;
     let data = result.Contents;
-    for(i = 0; i < data.length; i++){
+    resultDiv.innerHTML = "";
+    for(let i = 0; i < data.length; i++){
         let photo = base + '/' + data[i].Key;
         resultDiv.innerHTML += `<img src ="${photo}"
-        width="300px" height="300px" class="col-sm-6 col-md-4 col-lg-3 margin">`;        
+        width="150px" height="300px" class="col-sm-6 col-md-4 col-lg-3 images">`;   
     } 
+    
+   
 }
+
 const error = err => errorDiv.innerHTML = err;
 
 export {

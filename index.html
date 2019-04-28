@@ -5,33 +5,36 @@
         <meta charset="UTF-8">
         <meta name="description" content="Web-site">
         <meta name="author" content="Elvir Uzunovic">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="./css/style.css">
         <script type="module" src="./javascript/main.mjs"></script>
     </head>
 
     <body class="body">
         <nav id="menu" class="menu-class">
-            <a class="pointer-cursor" onclick="getUser()" ondblclick="hidenData()">User</a> |
+            <a class="pointer-cursor" onclick="getUser()">User</a> |
             <a class="pointer-cursor" onclick="getGallery()">Gallery</a> |
             <a class="pointer-cursor">Weather</a> |
             <a class="pointer-cursor" onclick="logOut()">Logout</a>
         </nav>
         <br>
         <br>
-        <div>
+        <div class="container">
             <form id="login-form" class="center"> 
-                <input id="email" type="email" placeholder="Email">
+                <input id="email" type="email" placeholder="Email" class="login">
                 <br>
                 <br>
-                <input id="password" type="password" placeholder="Password">
+                <input id="password" type="password" placeholder="Password" class="login">
                 <br>
                 <br>
                 <input type="button" value="Login" onclick="login()" class="login"> 
                 <br>
             </form>
+            <div>
                 <div id="pass" class="text pointer-cursor">forgot your password</div>
-                <div id="result"></div>
+                <div id="result" class="row"></div>
                 <div id="error" class="text error"></div>
             </div>
+        </div>
     </body>
 </html>

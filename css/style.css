@@ -2,6 +2,7 @@ body {
     height: 100vh;
     background-image: url("../images/pics.jpg");
     background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: cover;
 }
 
@@ -18,7 +19,9 @@ input {
     border-radius: 5px;
     background-color: rgb(238, 232, 232);
     padding: 7px;
-    margin-right: 78%;
+    margin-right: 79%;
+    margin-left: 1%;
+    margin-top: 1%;
 }
 
 .center {
@@ -47,4 +50,7 @@ input {
     font-size: 20px;
     margin-right: 60%;
     padding: 15px;
+}
+.images {
+    margin-bottom: 25px;
 }
