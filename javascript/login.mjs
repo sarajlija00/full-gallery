@@ -9,7 +9,9 @@ const errorDiv = document.getElementById('error');
 const menuDiv = document.getElementById('menu');
 const forgotPasswordDiv = document.getElementById('pass');
 const weather = document.getElementById('weather');
+//sakriti whetarer sa indexa
 weather.style = 'display: none';
+//sakriti menu sa indexa 
 menuDiv.style = 'display: none';
 
 //funkcija koja salje reguest i vraca response
@@ -51,7 +53,7 @@ const logOut = () => {
     localStorage.removeItem ('token');
     loginDiv.style = 'display: block';
     menuDiv.style = 'display: none';
-    errorDiv.style = 'display: block';
+    //(za Almira) errorDiv.style = 'display: block'; ispisuje mi greske na ekranu nakon logouta 
     forgotPasswordDiv.style = 'display: block';
 
 }

@@ -1,6 +1,7 @@
-const resultDiv = document.getElementById('result');
+const resultDivGallery = document.getElementById('result');
 const errorDiv = document.getElementById('error');
 
+//funkcija za slanje requesta
 const galleryRequest = () => new Promise ((resolve, reject) => {
     let url = 'https://3d1pftib26.execute-api.eu-west-1.amazonaws.com/dev/images/list';
     let xhttp = new XMLHttpRequest ();
@@ -14,32 +15,43 @@ const galleryRequest = () => new Promise ((resolve, reject) => {
         }
     }
     xhttp.open ("GET", url, true);
+    //cuvanje tokena
     const token = localStorage.getItem('token');
     xhttp.setRequestHeader ('Authorization', token);
     xhttp.send();
 })
-
+//funkcija koja poziva user, ispisuje rezultat i vraca gresku u slucaju da nesto nije dobro
 const getGallery = () => {
     galleryRequest()
     .then (showPictures)
     .catch (error)
 }
-
+//ispisati rezultat
 const showPictures = (result) => {
     let base = result.base_url;
     let data = result.Contents;
-    resultDiv.innerHTML = "";
+    resultDivGallery.innerHTML = "";
     for(let i = 0; i < data.length; i++){
         let photo = base + '/' + data[i].Key;
-        resultDiv.innerHTML += `<img src ="${photo}"
+        resultDivGallery.innerHTML += `<img src ="${photo}"
         width="150px" height="300px" class="col-sm-6 col-md-4 col-lg-3 images">`;   
     } 
     
-   
 }
 
+//funkcija koja se importuje u weather, ima zadatak da sakrije ispisanu galleryu nakon sto se se izvrsi klick na weather u navu 
+const hidenGallery = () => {
+    resultDivGallery.style = 'display: none';
+}
+//funkcija koja se importuje u weather, i ima za cilj ponovno prikazivanje weather rezultata
+const showWeather = () => {
+    resultDivGallery.style = 'display: block';
+}
+//greska
 const error = err => errorDiv.innerHTML = err;
 
 export {
-    getGallery
+    getGallery,
+    hidenGallery,
+    showWeather
 }

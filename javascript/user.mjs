@@ -3,7 +3,7 @@ const userResult = document.getElementById('result')
 const errorDiv = document.getElementById('error');
 
 
-
+//funkcija koja salje reguest i vraca response
 const user = () => new Promise ((resolve, reject) => {
     let url = 'https://3d1pftib26.execute-api.eu-west-1.amazonaws.com/dev/user/profile';
     let xhttp = new XMLHttpRequest ();
@@ -17,11 +17,13 @@ const user = () => new Promise ((resolve, reject) => {
         }
     }
     xhttp.open('GET', url, true);
+    //sacuvati prethodno dobijeni token
     const token = localStorage.getItem('token');
     xhttp.setRequestHeader('Authorization', token);
     xhttp.send();
  })
 
+ //funkcija koja poziva user, ispisuje rezultat i vraca gresku u slucaju da nesto nije dobro
  const getUser = () => {
      user()
      .then(showData)
@@ -29,7 +31,7 @@ const user = () => new Promise ((resolve, reject) => {
  }
 
  
-
+// ispis rezultata
 const showData = (result) => {
     userResult.innerHTML = `
     <div class = "menu-class result">
@@ -40,11 +42,11 @@ const showData = (result) => {
     </div>
     `;
 }
-
+//funkcija koja se importuje u login.mjs i ima za cilj sakrivanje user.mjs rezultata nakon logouta 
 const hidenData = () => { 
     userResult.style = 'display: none';
 }
-
+// greska
 const error = err => errorDiv.innerHTML = err;
 
 
