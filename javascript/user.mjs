@@ -1,3 +1,5 @@
+import {hidenInput} from './weather.mjs';
+
 const userDiv = document.getElementById('user');
 const userResult = document.getElementById('result')
 const errorDiv = document.getElementById('error');
@@ -25,6 +27,7 @@ const user = () => new Promise ((resolve, reject) => {
 
  //funkcija koja poziva user, ispisuje rezultat i vraca gresku u slucaju da nesto nije dobro
  const getUser = () => {
+     hidenInput()
      user()
      .then(showData)
      .catch(error)

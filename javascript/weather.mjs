@@ -2,13 +2,12 @@ import {hidenGallery, showWeather} from './gallery.mjs'
 
 const weather = document.getElementById('weather');
 const errorDiv = document.getElementById('error');
-const resultDiv = document.getElementById('result');
-const city = document.getElementById('insert').value;
+const resultDiv = document.getElementById('rezultat');
 
 //funkcija koja prima hidenGallery iz gallery.mjs, ima zadatak da ukloni ucitani sadrzaj gallerije i prikaze weather input
 const showInput = () => {
     hidenGallery()
-    weather.style = 'display: block';
+    weather.style = 'display: hiden';
 }
 //funkcija koja se importuje u login.mjs i ima za cilj sakrivanje wheater inputa nakon logouta 
 const hidenInput = () => {
@@ -35,7 +34,7 @@ const weatherRequest = (city) => new Promise((resolve, reject) => {
 //funkcija koja poziva weatherRequest, ispisuje rezultat i vraca gresku u slucaju da nesto nije dobro
 const resultWeather = () => {
     showWeather()
-    weatherRequest(city)
+    weatherRequest()
     .then(showResult)
     .catch(showError)
 }
@@ -52,11 +51,8 @@ const showResult = (result) => {
     </div
     `;
 }
-
 //greska
 const showError = err => errorDiv.innerHTML = err;
-
-
 export {
     showInput,
     hidenInput,
