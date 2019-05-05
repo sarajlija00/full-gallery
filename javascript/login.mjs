@@ -70,9 +70,23 @@ const setToken = response => {
 //funkcija za prikazivanje greske
 const showError = err => errorDiv.innerHTML = err;
 
+const getTokenForRefresh = () => {
+    const token = localStorage.getItem ('token');
+    if (!token) {
+        loginDiv.style = 'display: block';
+        menuDiv.style = 'display: none';
+        
+    }
+    else {
+        loginDiv.style = 'display: none';
+        menuDiv.style = 'display: block';
+        forgotPasswordDiv.style = 'display: none';
+    }
+}
 
 
 export {
     login,
-    logOut
+    logOut,
+    getTokenForRefresh
 }

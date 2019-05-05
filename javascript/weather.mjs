@@ -7,12 +7,14 @@ const resultDiv = document.getElementById('rezultat');
 //funkcija koja prima hidenGallery iz gallery.mjs, ima zadatak da ukloni ucitani sadrzaj gallerije i prikaze weather input
 const showInput = () => {
     hidenGallery()
-    weather.style = 'display: hiden';
+    weather.style = 'display: block';
 }
 //funkcija koja se importuje u login.mjs i ima za cilj sakrivanje wheater inputa nakon logouta 
 const hidenInput = () => {
     weather.style = 'display: none';
 }
+
+
 
 //funkcija za slanje requesta
 const weatherRequest = (city) => new Promise((resolve, reject) => {

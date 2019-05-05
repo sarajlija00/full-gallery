@@ -1,3 +1,5 @@
+import {hidenInput} from './weather.mjs';
+
 const resultDivGallery = document.getElementById('result');
 const errorDiv = document.getElementById('error');
 
@@ -43,9 +45,13 @@ const showPictures = (result) => {
 const hidenGallery = () => {
     resultDivGallery.style = 'display: none';
 }
+
+const showGalleryy = () => {
+    resultDivGallery.style = 'display: block';
+}
 //funkcija koja se importuje u weather, i ima za cilj ponovno prikazivanje weather rezultata
 const showWeather = () => {
-    resultDivGallery.style = 'display: block';
+    resultDivGallery.style = 'display: none';
 }
 //greska
 const error = err => errorDiv.innerHTML = err;

@@ -1,4 +1,4 @@
-import {login, logOut} from './login.mjs';
+import {login, logOut, getTokenForRefresh} from './login.mjs';
 import {getUser, hidenData} from './user.mjs';
 import {getGallery} from './gallery.mjs';
 import {showInput, resultWeather} from './weather.mjs';
@@ -11,3 +11,4 @@ window.hidenData = hidenData;
 window.getGallery = getGallery;
 window.resultWeather = resultWeather;
 window.showInput = showInput;
+window.getTokenForRefresh = getTokenForRefresh;
